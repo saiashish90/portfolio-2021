@@ -1,0 +1,123 @@
+@import "./_partials/fonts";
+%panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+%underline {
+  display: inline-block;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--text-dark-mode);
+    transition: width 0.3s;
+  }
+  &:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+}
+.wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: "Lato";
+}
+.main {
+  @extend %panel;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background-color: var(--bg-dark-mode);
+  .image {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    img {
+      height: 100vh;
+      mask-image: linear-gradient(215deg, black 0%, transparent 70%);
+    }
+  }
+  .text {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 50%;
+    color: var(--text-dark-mode);
+    h1 {
+      font-weight: normal;
+    }
+    h2 {
+      font-weight: 900;
+    }
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0.3rem;
+      gap: 0.3rem;
+      font-size: 1.1rem;
+      .links {
+        display: flex;
+        margin-top: 0.75rem;
+        flex-direction: column;
+        a {
+          span {
+            @extend %underline;
+          }
+        }
+      }
+    }
+  }
+  .scrollanimation {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 1px;
+    height: 100px;
+    background-color: transparent;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(var(--text-dark-mode), var(--text-dark-mode), transparent);
+      animation: animate 1.5s linear infinite;
+    }
+  }
+}
+.info {
+  @extend %panel;
+  top: 100%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem;
+  color: var(--text-dark-mode-fg);
+  background: var(--fg-dark-mode);
+}
+
+@keyframes animate {
+  0% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}
