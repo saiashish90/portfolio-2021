@@ -1,30 +1,24 @@
 import Home from "../styles/Home.module.scss";
 import Image from "next/image";
+import { useEffect } from "react";
 export default function index() {
   return (
     <div className={Home.wrapper}>
       <div className={Home.main}>
-        <div className={Home.image}>
-          <Image src="/main.png" width={433} height={577} alt="Hero image" />
-        </div>
-
+        {/* Text */}
         <div className={Home.text}>
-          <h1>Hi, Im Sai Ashish</h1>
-          <h2>Contact</h2>
-          <div className={Home.contacts}>
-            <span>saiashish90@gmail.com</span>
-            <span>9741623125</span>
-            <div className={Home.links}>
-              <a href="https://github.com/saiashish90" target="_blank">
-                <span>GitHub</span>
-              </a>
-              <a href="https://www.linkedin.com/in/sai-ashish-ba927a1b2/" target="_blank">
-                <span>LinkedIn</span>
-              </a>
+          {/* Name */}
+          <div className={Home.name}>
+            <h1>Hi, I'm Sai Ashish</h1>
+          </div>
+          {/* Designation */}
+          <div className={Home.desig}>
+            <div>
+              <h2>A Computer Science Engineer</h2>
             </div>
           </div>
-          <h2>Resume</h2>
         </div>
+        {/* Animation */}
         <div className={Home.scrollanimation} />
       </div>
       <div className={Home.info}>

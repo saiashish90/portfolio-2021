@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
 }
+
 %underline {
   display: inline-block;
   &::after {
@@ -19,11 +20,60 @@
     transition: width 0.3s;
   }
 }
+%typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15rem solid var(--text-dark-mode);
+  animation: typing 2s steps(18, end) forwards;
+  @keyframes typing {
+    0% {
+      width: 0;
+      border-color: var(--text-dark-mode);
+    }
+    99.999% {
+      width: 100%;
+      border-color: var(--text-dark-mode);
+    }
+    100% {
+      border-color: transparent;
+    }
+  }
+}
+%typing-second {
+  @extend %typing;
+  animation: typing-sec 4s steps(25, end), cursor 0.75s step-end infinite 4s;
+  @keyframes typing-sec {
+    0% {
+      width: 0;
+      border-color: transparent;
+    }
+    50% {
+      width: 0%;
+      border-color: transparent;
+    }
+    50.001% {
+      width: 0%;
+      border-color: var(--text-dark-mode);
+    }
+    100% {
+      width: 100%;
+      border-color: var(--text-dark-mode);
+    }
+  }
+  @keyframes cursor {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--text-dark-mode);
+    }
+  }
+}
 .wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-family: "Lato";
 }
 .main {
   @extend %panel;
@@ -33,44 +83,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 5rem;
+  font-family: "Roboto Mono";
+  color: var(--text-dark-mode);
   background-color: var(--bg-dark-mode);
-  .image {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    img {
-      height: 100vh;
-      mask-image: linear-gradient(215deg, black 0%, transparent 70%);
-    }
-  }
   .text {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    width: 50%;
-    color: var(--text-dark-mode);
-    h1 {
-      font-weight: normal;
-    }
-    h2 {
-      font-weight: 900;
-    }
-    .contacts {
+    gap: 1rem;
+    .name {
       display: flex;
-      flex-direction: column;
-      padding-left: 0.3rem;
-      gap: 0.3rem;
-      font-size: 1.1rem;
-      .links {
-        display: flex;
-        margin-top: 0.75rem;
-        flex-direction: column;
-        a {
-          span {
-            @extend %underline;
-          }
-        }
+      width: 100%;
+      h1 {
+        font-weight: normal;
+        font-size: 5rem;
+        margin: 0;
+        @extend %typing;
+      }
+    }
+    .desig {
+      display: flex;
+      h2 {
+        font-weight: normal;
+        font-size: 1.5rem;
+        margin: 0;
+        @extend %typing-second;
       }
     }
   }
