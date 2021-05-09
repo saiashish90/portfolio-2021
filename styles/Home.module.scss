@@ -40,11 +40,18 @@
     .links {
       display: flex;
       flex-direction: column;
+      a {
+        &:hover {
+          background-color: var(--text-dark-mode);
+          color: var(--text-dark-mode-fg);
+        }
+      }
     }
   }
   .text {
     display: flex;
     flex-direction: column;
+    width: 70%;
     gap: 1rem;
 
     h1 {
@@ -62,6 +69,21 @@
         margin: 0;
         @include typing(2s, 2s, infinite);
       }
+    }
+  }
+  .projects {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    width: 15%;
+    padding: 1.5rem 0rem;
+    span {
+      padding: 2rem 1rem;
+      position: relative;
+      background-image: url("../public/main-circle.png");
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
   .scrollanimation {

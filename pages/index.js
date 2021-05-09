@@ -21,21 +21,33 @@ export default function index() {
         }, 2000);
       }, 2000);
     }
-  }, [...time]);
+  }, [time[1]]);
   return (
     <div className={Home.wrapper}>
+      {/* fixed div */}
       <div className={Home.main}>
+        {/* Left side bar */}
         <div className={Home.leftmargin}>
+          {/* date */}
           <div className={Home.date}>
             <span>{time[0]}</span>
             <span id="time"></span>
             <span>{time[2]}</span>
           </div>
+          {/* links */}
           <div className={Home.links}>
-            <span>GitHub</span>
-            <span>LinkedIn</span>
-            <span>Medium</span>
-            <span>Resume</span>
+            <a href="https://www.github.com/saiashish90" target="_blank">
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/sai-ashish-ba927a1b2/" target="_blank">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://saiashish90.medium.com/" target="_blank">
+              <span>Medium</span>
+            </a>
+            <a href="">
+              <span>Resume</span>
+            </a>
           </div>
         </div>
         {/* Text */}
@@ -47,9 +59,13 @@ export default function index() {
             <h2>A Computer Science Engineer</h2>
           </div>
         </div>
+        <div className={Home.projects}>
+          <span>Projects</span>
+        </div>
         {/* Animation */}
         <div className={Home.scrollanimation} />
       </div>
+      {/* scrollable page */}
       <div className={Home.info}>
         <span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ullam neque maxime dolorem?

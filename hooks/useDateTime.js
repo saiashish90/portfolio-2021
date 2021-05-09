@@ -4,7 +4,7 @@ export function useDateTime() {
   useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date());
-    }, 30 * 1000);
+    }, 15 * 1000);
     return () => {
       clearInterval(timer);
     };
