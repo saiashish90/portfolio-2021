@@ -1,0 +1,83 @@
+%underline {
+  display: inline-block;
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--text-dark-mode);
+    transition: width 0.3s;
+  }
+  &:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+  }
+}
+@mixin typing($duration, $delay, $infinite: null, $type: typing) {
+  overflow: hidden;
+  white-space: nowrap;
+  @if $type==typing {
+    width: 0;
+  } @else {
+    width: 100%;
+  }
+  animation: $type $duration steps(18, end) $delay forwards, cursor 0.75s step-end $delay $infinite;
+  @keyframes typing {
+    0% {
+      width: 0;
+      border-right: 0.15rem solid var(--text-dark-mode);
+    }
+    99.999% {
+      width: 100%;
+      border-right: 0.15rem solid var(--text-dark-mode);
+    }
+    100% {
+      width: 100%;
+      border-right: none;
+    }
+  }
+  @keyframes erase {
+    0% {
+      width: 100%;
+      border-right: 0.15rem solid var(--text-dark-mode);
+    }
+    99.999% {
+      width: 0;
+      border-right: 0.15rem solid var(--text-dark-mode);
+    }
+    100% {
+      width: 0;
+      border-right: none;
+    }
+  }
+  @keyframes cursor {
+    from,
+    to {
+      border-right: none;
+    }
+    50% {
+      border-right: 0.15rem solid var(--text-dark-mode);
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    width: 1px;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  50% {
+    width: 1px;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+    opacity: 1;
+  }
+  100% {
+    width: 1px;
+    transform-origin: bottom;
+    transform: scaleY(1);
+    opacity: 0;
+  }
+}

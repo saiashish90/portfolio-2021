@@ -1,21 +1,50 @@
 import Home from "../styles/Home.module.scss";
-import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useDateTime } from "../hooks/useDateTime";
 export default function index() {
+  const isInitialMount = useRef(true);
+  let time = useDateTime();
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      document.getElementById("time").innerHTML = time[1];
+      console.log("ount");
+    } else {
+      console.log("time changed");
+      document.getElementById("time").classList.add(Home.time_erase);
+      setTimeout(() => {
+        document.getElementById("time").classList.remove(Home.time_erase);
+        document.getElementById("time").innerHTML = time[1];
+        document.getElementById("time").classList.add(Home.time_type);
+        setTimeout(() => {
+          document.getElementById("time").classList.remove(Home.time_type);
+        }, 2000);
+      }, 2000);
+    }
+  }, [...time]);
   return (
     <div className={Home.wrapper}>
       <div className={Home.main}>
+        <div className={Home.leftmargin}>
+          <div className={Home.date}>
+            <span>{time[0]}</span>
+            <span id="time"></span>
+            <span>{time[2]}</span>
+          </div>
+          <div className={Home.links}>
+            <span>GitHub</span>
+            <span>LinkedIn</span>
+            <span>Medium</span>
+            <span>Resume</span>
+          </div>
+        </div>
         {/* Text */}
         <div className={Home.text}>
           {/* Name */}
-          <div className={Home.name}>
-            <h1>Hi, I'm Sai Ashish</h1>
-          </div>
+          <h1 className={Home.h1}>Hi, I'm Sai Ashish</h1>
           {/* Designation */}
           <div className={Home.desig}>
-            <div>
-              <h2>A Computer Science Engineer</h2>
-            </div>
+            <h2>A Computer Science Engineer</h2>
           </div>
         </div>
         {/* Animation */}
