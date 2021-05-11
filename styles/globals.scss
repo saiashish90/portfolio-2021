@@ -1,9 +1,18 @@
+@import "./_partials/mediaqueries";
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // Fluid font scaling
+  font-size: 1.04vw;
+  @include sm {
+    font-size: 2vw;
+  }
+  @include xs {
+    font-size: 2.5vw;
+  }
 }
 
 a {
