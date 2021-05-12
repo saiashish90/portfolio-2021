@@ -53,15 +53,14 @@ export default function index() {
         </div>
         {/* Text */}
         <div className={Home.text}>
-          {/* Name */}
           <div className={Home.name}>
             <h1 className={Home.h1}>Hi, I'm Sai Ashish</h1>
             <div className={Home.desig}>
               <h2>A Computer Science Engineer</h2>
             </div>
           </div>
-          {/* Designation */}
         </div>
+        {/* Projects */}
         <div className={Home.projects}>
           <span>Projects</span>
         </div>
