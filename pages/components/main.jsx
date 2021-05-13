@@ -1,4 +1,4 @@
-import Front from "../../styles/Front.module.scss";
+import Home from "../../styles/Home.module.scss";
 import { useEffect, useRef } from "react";
 import { useDateTime } from "../../hooks/useDateTime";
 export default function Main() {
@@ -14,29 +14,29 @@ export default function Main() {
     } else {
       console.log("time changed");
       setTimeout(() => {
-        timecontainer.current.classList.remove(Front.time_erase);
+        timecontainer.current.classList.remove(Home.time_erase);
         timecontainer.current.innerHTML = time[1];
-        timecontainer.current.classList.add(Front.time_type);
+        timecontainer.current.classList.add(Home.time_type);
       }, 2000);
     }
     return () => {
-      timecontainer.current.classList.remove(Front.time_type);
-      timecontainer.current.classList.add(Front.time_erase);
+      timecontainer.current.classList.remove(Home.time_type);
+      timecontainer.current.classList.add(Home.time_erase);
       console.log("unmount");
     };
   }, [time[1]]);
   return (
-    <div className={Front.main}>
+    <div className={Home.main}>
       {/* Left side bar */}
-      <div className={Front.leftmargin}>
+      <div className={Home.leftmargin}>
         {/* date */}
-        <div className={Front.date}>
+        <div className={Home.date}>
           <span>{time[0]}</span>
           <span ref={timecontainer} id="time"></span>
           <span>{time[2]}</span>
         </div>
         {/* links */}
-        <div className={Front.links}>
+        <div className={Home.links}>
           <a href="https://www.github.com/saiashish90" target="_blank">
             <span>GitHub</span>
           </a>
@@ -52,21 +52,21 @@ export default function Main() {
         </div>
       </div>
       {/* Text */}
-      <div className={Front.text}>
-        <div className={Front.name}>
-          <h1 className={Front.h1}>Hi, I'm Sai Ashish</h1>
-          <div className={Front.desig}>
+      <div className={Home.text}>
+        <div className={Home.name}>
+          <h1 className={Home.h1}>Hi, I'm Sai Ashish</h1>
+          <div className={Home.desig}>
             <h2>A Computer Science Engineer</h2>
           </div>
         </div>
       </div>
       {/* Projects */}
-      <div className={Front.projects}>
+      <div className={Home.projects}>
         <span>Projects</span>
       </div>
 
       {/* Mobile links */}
-      <div className={Front.linksmobile}>
+      <div className={Home.linksmobile}>
         <a href="https://www.github.com/saiashish90" target="_blank">
           <span>GitHub</span>
         </a>
@@ -81,7 +81,7 @@ export default function Main() {
         </a>
       </div>
       {/* Animation */}
-      <div className={Front.scrollanimation} />
+      <div className={Home.scrollanimation} />
     </div>
   );
 }

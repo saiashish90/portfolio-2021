@@ -5,7 +5,7 @@ export default function index() {
   return (
     <div className={Home.wrapper}>
       {/* fixed div */}
-      <Main></Main>
+      <Main />
       {/* scrollable page */}
       <div className={Home.info}>
         <span>
