@@ -11,12 +11,14 @@
   top: 100%;
   left: 5%;
   width: 90%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10rem;
-  color: var(--text-dark-mode-fg);
+  color: var(--text-dark-mode);
   background: var(--fg-dark-mode);
+  margin-bottom: 3rem;
 }
 
 // All media queries
