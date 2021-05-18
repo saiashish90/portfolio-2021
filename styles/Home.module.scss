@@ -122,15 +122,26 @@
   top: 100%;
   left: 5%;
   width: 90%;
+  height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 10rem;
+  padding: 5rem 5rem;
   color: var(--text-dark-mode-fg);
   background: var(--fg-dark-mode);
+  margin-bottom: 1rem;
+  font-family: "Roboto Mono";
+  .desc {
+    transform: rotate(-10deg);
+    width: 30ch;
+    padding: 4rem 2rem;
+    background-image: url("../public/note.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
-// All media queries
+// Media queries for tablet.
 @include sm {
   .main {
     justify-content: center;
@@ -150,10 +161,12 @@
       width: 90%;
       align-items: center;
       padding: 0.1rem;
-      h1 {
-        font-size: 4rem;
-        text-align: center;
-        word-wrap: break-word;
+      .name {
+        h1 {
+          font-size: 4rem;
+          text-align: center;
+          word-wrap: break-word;
+        }
       }
     }
     .projects {
@@ -173,14 +186,17 @@
     }
   }
 }
+// Media queries for mobile.
 @include xs {
   .main {
     .leftmargin {
       font-size: 1.5rem;
     }
     .text {
-      h1 {
-        font-size: 3rem;
+      .name {
+        h1 {
+          font-size: 3rem;
+        }
       }
     }
     .projects {
