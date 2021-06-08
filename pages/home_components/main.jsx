@@ -1,5 +1,6 @@
 import Home from "../../styles/Home.module.scss";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { useDateTime } from "../../hooks/useDateTime";
 export default function Main() {
   const isInitialMount = useRef(true);
@@ -7,22 +8,26 @@ export default function Main() {
   let time = useDateTime();
   // Code to delete and add time
   useEffect(() => {
+    // First mount do nothing
     if (isInitialMount.current) {
       isInitialMount.current = false;
       timecontainer.current.innerHTML = time[1];
-      console.log("first mount");
     } else {
-      console.log("time changed");
+      // Consequent mounts time change animation
       setTimeout(() => {
-        timecontainer.current.classList.remove(Home.time_erase);
-        timecontainer.current.innerHTML = time[1];
-        timecontainer.current.classList.add(Home.time_type);
+        try {
+          timecontainer.current.classList.remove(Home.time_erase);
+          timecontainer.current.innerHTML = time[1];
+          timecontainer.current.classList.add(Home.time_type);
+        } catch (error) {}
       }, 2000);
     }
     return () => {
-      timecontainer.current.classList.remove(Home.time_type);
-      timecontainer.current.classList.add(Home.time_erase);
-      console.log("unmount");
+      // Reset classes on unmount
+      try {
+        timecontainer.current.classList.remove(Home.time_type);
+        timecontainer.current.classList.add(Home.time_erase);
+      } catch (error) {}
     };
   }, [time[1]]);
   return (
@@ -62,7 +67,9 @@ export default function Main() {
       </div>
       {/* Projects */}
       <div className={Home.projects}>
-        <span>Projects</span>
+        <Link href="/projects">
+          <span>Projects</span>
+        </Link>
       </div>
 
       {/* Mobile links */}

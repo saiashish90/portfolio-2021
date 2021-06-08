@@ -85,15 +85,14 @@
     justify-content: center;
     height: 100%;
     width: 15%;
-    padding: 1.5rem 0rem;
+    padding: 2rem 1rem;
     font-size: 1.25rem;
-
     span {
-      padding: 2rem 1rem;
-      position: relative;
-      background-image: url("../public/main-circle.png");
-      background-repeat: no-repeat;
-      background-size: contain;
+      padding: 0.1rem;
+      &:hover {
+        background-color: var(--text-dark-mode);
+        color: var(--text-dark-mode-fg);
+      }
     }
   }
   .linksmobile {
