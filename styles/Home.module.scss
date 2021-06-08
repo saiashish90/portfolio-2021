@@ -200,6 +200,23 @@
       flex-direction: column;
     }
   }
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    .desc {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      transform: rotate(0deg);
+      width: 100%;
+      background: none;
+      border: black 1px solid;
+      font-size: 1.1rem;
+    }
+    .about {
+      font-size: 1.1rem;
+    }
+  }
 }
 // Media queries for mobile.
 @include xs {
@@ -224,6 +241,26 @@
     }
     .linksmobile {
       font-size: 1.5rem;
+    }
+  }
+  .info {
+    .desc {
+      font-size: 1.2rem;
+    }
+    .about {
+      font-size: 1.2rem;
+      .skills {
+        .heading {
+          font-weight: bold;
+          font-size: 2rem;
+        }
+      }
+      .interests {
+        span {
+          font-weight: bold;
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
