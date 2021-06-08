@@ -37,7 +37,7 @@ export default function Main() {
         {/* date */}
         <div className={Home.date}>
           <span>{time[0]}</span>
-          <span ref={timecontainer} id="time"></span>
+          <span ref={timecontainer}></span>
           <span>{time[2]}</span>
         </div>
         {/* links */}
@@ -66,7 +66,11 @@ export default function Main() {
         </div>
       </div>
       {/* Projects */}
-      <div className={Home.projects}>
+      <div
+        onClick={() => {
+          document.getElementById("info").style.opacity = "0";
+        }}
+        className={Home.projects}>
         <Link href="/projects">
           <span>Projects</span>
         </Link>

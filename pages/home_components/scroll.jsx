@@ -1,7 +1,7 @@
 import Home from "../../styles/Home.module.scss";
 export default function scrollcontainer() {
   return (
-    <div className={Home.info}>
+    <div id="info" className={Home.info}>
       <div className={Home.desc}>
         I am a machine learning geek who is also interested in full-stack web development. I am
         constantly looking for work that challenges my skills and creativity.
