@@ -1,11 +1,17 @@
 import Home from "../../styles/Home.module.scss";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useDateTime } from "../../hooks/useDateTime";
 export default function Main() {
   const isInitialMount = useRef(true);
   const timecontainer = useRef(null);
   let time = useDateTime();
+  const config = {
+    type: "spring",
+    stiffness: 750,
+    damping: 80,
+  };
   // Code to delete and add time
   useEffect(() => {
     // First mount do nothing
@@ -31,7 +37,12 @@ export default function Main() {
     };
   }, [time[1]]);
   return (
-    <div className={Home.main}>
+    <motion.div
+      transition={config}
+      initial={{ y: "100%" }}
+      animate={{ y: "0%" }}
+      exit={{ y: "-100%" }}
+      className={Home.main}>
       {/* Left side bar */}
       <div className={Home.leftmargin}>
         {/* date */}
@@ -93,6 +104,6 @@ export default function Main() {
       </div>
       {/* Animation */}
       <div className={Home.scrollanimation} />
-    </div>
+    </motion.div>
   );
 }
