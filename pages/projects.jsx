@@ -9,7 +9,13 @@ export async function getStaticProps(context) {
   var path = require("path");
   const postsDirectory = path.join(process.cwd(), "./public/md");
   const filenames = fs.readdirSync(postsDirectory);
+  const props = filenames.map((file) => {
+    console.log(file);
+    return {
+      filename: file,
+    };
+  });
   return {
-    props: { filenames },
+    props: { props },
   };
 }

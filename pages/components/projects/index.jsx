@@ -7,8 +7,8 @@ import Link from "next/link";
 
 // Main function
 export default function projects({ props }) {
-  const items = props.filenames;
-  const listitems = items.map((item) => <li key={item}>{item}</li>);
+  const list = props.props;
+  const listitems = list.map((item) => <li key={item.filename}>{item.filename}</li>);
   const config = {
     type: "spring",
     stiffness: 750,
