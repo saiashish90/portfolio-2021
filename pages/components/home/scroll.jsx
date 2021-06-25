@@ -1,4 +1,4 @@
-import Home from "../../styles/Home.module.scss";
+import Home from "./Home.module.scss";
 export default function scrollcontainer() {
   return (
     <div id="info" className={Home.info}>

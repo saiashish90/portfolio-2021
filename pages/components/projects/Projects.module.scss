@@ -24,4 +24,8 @@
       color: var(--text-dark-mode-fg);
     }
   }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }

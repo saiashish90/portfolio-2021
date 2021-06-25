@@ -1,14 +1,4 @@
-import Home from "../styles/Home.module.scss";
-import Main from "./home_components/main";
-import Scrollcontainer from "./home_components/scroll";
-import { motion } from "framer-motion";
+import Home from "./components/home";
 export default function index() {
-  return (
-    <div className={Home.wrapper}>
-      {/* fixed div */}
-      <Main />
-      {/* scrollable page */}
-      <Scrollcontainer />
-    </div>
-  );
+  return <Home></Home>;
 }

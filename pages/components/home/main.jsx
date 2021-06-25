@@ -1,8 +1,8 @@
-import Home from "../../styles/Home.module.scss";
+import Home from "./Home.module.scss";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useDateTime } from "../../hooks/useDateTime";
+import { useDateTime } from "../../../hooks/useDateTime";
 export default function Main() {
   const isInitialMount = useRef(true);
   const timecontainer = useRef(null);

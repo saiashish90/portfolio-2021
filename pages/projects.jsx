@@ -1,22 +1,4 @@
-import proj from "../styles/Projects.module.scss";
-import { motion } from "framer-motion";
-import Link from "next/link";
+import Projects from "./components/projects";
 export default function projects() {
-  const config = {
-    type: "spring",
-    stiffness: 750,
-    damping: 80,
-  };
-  return (
-    <motion.div
-      transition={config}
-      initial={{ y: "100%" }}
-      animate={{ y: "0%", transition: { ...config, delay: 0.1 } }}
-      exit={{ y: "-100%" }}
-      className={proj.wrapper}>
-      <Link href="/">
-        <span>Home</span>
-      </Link>
-    </motion.div>
-  );
+  return <Projects></Projects>;
 }
