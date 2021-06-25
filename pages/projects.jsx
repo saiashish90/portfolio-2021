@@ -13,6 +13,7 @@ export async function getStaticProps(context) {
     console.log(file);
     return {
       filename: file,
+      name: file.slice(0, -3),
     };
   });
   return {
