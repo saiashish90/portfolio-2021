@@ -47,7 +47,9 @@
       display: flex;
       flex-direction: column;
       a {
+        margin-bottom: 3px;
         &:hover {
+          @extend %neumorph;
           background-color: var(--text-dark-mode);
           color: var(--text-dark-mode-fg);
         }
@@ -88,8 +90,9 @@
     padding: 2rem 1rem;
     font-size: 1.25rem;
     span {
-      padding: 0.1rem;
+      padding: 0.2rem;
       &:hover {
+        @extend %neumorph;
         background-color: var(--text-dark-mode);
         color: var(--text-dark-mode-fg);
       }
@@ -190,6 +193,13 @@
       right: 5%;
       width: auto;
       height: auto;
+      span {
+        &:hover {
+          box-shadow: none;
+          background-color: var(--bg-dark-mode);
+          color: var(--text-dark-mode);
+        }
+      }
     }
     .linksmobile {
       position: absolute;

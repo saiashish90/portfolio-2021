@@ -2,12 +2,26 @@
 @import "./_partials/animations";
 @import "./_partials/mediaqueries";
 .wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto Mono";
   background-color: var(--bg-dark-mode);
   color: var(--text-dark-mode);
+  span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 0.2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    &:hover {
+      @extend %neumorph;
+      background-color: var(--text-dark-mode);
+      color: var(--text-dark-mode-fg);
+    }
+  }
 }

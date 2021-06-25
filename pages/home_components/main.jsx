@@ -40,7 +40,7 @@ export default function Main() {
     <motion.div
       transition={config}
       initial={{ y: "100%" }}
-      animate={{ y: "0%" }}
+      animate={{ y: "0%", transition: { ...config, delay: 0.1 } }}
       exit={{ y: "-100%" }}
       className={Home.main}>
       {/* Left side bar */}
