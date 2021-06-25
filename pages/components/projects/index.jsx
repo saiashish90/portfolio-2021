@@ -1,7 +1,14 @@
+// css imports
 import proj from "./Projects.module.scss";
+
+// npm imports
 import { motion } from "framer-motion";
 import Link from "next/link";
-export default function projects() {
+
+// Main function
+export default function projects({ props }) {
+  const items = props.filenames;
+  const listitems = items.map((item) => <li key={item}>{item}</li>);
   const config = {
     type: "spring",
     stiffness: 750,
@@ -17,7 +24,9 @@ export default function projects() {
       <Link href="/">
         <span>Home</span>
       </Link>
-      <div className={proj.cards}>Hi</div>
+      <div className={proj.cards}>
+        <ul className={proj.internships}>{listitems}</ul>
+      </div>
     </motion.div>
   );
 }

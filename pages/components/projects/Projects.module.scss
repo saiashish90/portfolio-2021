@@ -25,7 +25,14 @@
     }
   }
   .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    position: absolute;
+    inset: 20% 10%;
+    .internships {
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      list-style: none;
+    }
   }
 }
